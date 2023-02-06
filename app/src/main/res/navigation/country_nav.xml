@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/country_nav"
+    app:startDestination="@id/feedList">
+
+    <fragment
+        android:id="@+id/feedList"
+        android:name="com.example.globalist.view.FeedList"
+        android:label="fragment_feed_list"
+        tools:layout="@layout/fragment_feed_list" >
+        <action
+            android:id="@+id/action_feedList_to_countryList"
+            app:destination="@id/countryList" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryList"
+        android:name="com.example.globalist.view.CountryList"
+        android:label="fragment_country_list"
+        tools:layout="@layout/fragment_country_list" >
+        <action
+            android:id="@+id/action_countryList_to_feedList"
+            app:destination="@id/feedList" />
+
+        <argument
+            android:name="countryuidii"
+            app:argType="integer"
+            android:defaultValue="0" />
+
+    </fragment>
+
+</navigation>

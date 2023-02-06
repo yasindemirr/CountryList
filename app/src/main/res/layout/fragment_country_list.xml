@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="selectedCountry"
+            type="com.example.globalist.model.Country" />
+    </data>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.CountryList">
+
+        <ImageView
+            android:id="@+id/countryListId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:downloadUrl="@{selectedCountry.countryUri}"
+            android:layout_alignParentTop="true"
+            android:minHeight="200dp"
+
+            android:scaleType="fitCenter"
+
+            android:paddingTop="10dp">
+
+        </ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{selectedCountry.countryName}"
+            android:layout_below="@+id/countryListId"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:id="@+id/countryNameId"
+            >
+
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{selectedCountry.countryCapital}"
+            android:layout_below="@+id/countryNameId"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:layout_margin="8dp"
+            android:id="@+id/countryCapital"
+            >
+
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{selectedCountry.countryRegion}"
+            android:layout_below="@+id/countryCapital"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:layout_margin="8dp"
+            android:id="@+id/countryRegion"
+            >
+
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{selectedCountry.countryCurrency}"
+            android:layout_below="@+id/countryRegion"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:layout_margin="8dp"
+            android:id="@+id/countryCurrency"
+            >
+
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{selectedCountry.countryLanguage}"
+            android:layout_below="@+id/countryCurrency"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:layout_margin="8dp"
+            android:id="@+id/countryLanguage"
+            >
+
+        </TextView>
+
+    </RelativeLayout>
+
+</layout>
+
+
+
+
